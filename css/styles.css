@@ -155,6 +155,10 @@ ul {
   color: var(--color-ocean);
 }
 
+.mobile-nav-link.current {
+  color: var(--color-ocean);
+}
+
 .nav-list-item:hover,
 .header-adress-item:hover,
 .nav-list-item:focus,
@@ -163,9 +167,6 @@ ul {
 }
 
 .header-adress-list {
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  font-style: normal;
   display: flex;
   gap: 40px;
 }
@@ -181,7 +182,6 @@ ul {
 
 .header-container {
   display: flex;
-  height: 72px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(231, 233, 252, 1);
@@ -192,8 +192,15 @@ ul {
     display: block;
   }
 
+  .logo-header {
+    margin-right: 120px;
+  }
+
+  .header-adress-email {
+    margin-bottom: 12px;
+  }
+
   .header-adress-item {
-    display: contents;
     font-size: 12px;
   }
 }
@@ -284,8 +291,10 @@ ul {
   color: var(--color-cloud);
 }
 
-.footer-container-media {
-  margin-right: 80px;
+@media screen and (min-width: 1158px) {
+  .footer-container-media {
+    margin-right: 80px;
+  }
 }
 
 .footer-media-text {
@@ -301,10 +310,6 @@ ul {
 .footer-icons-list {
   display: flex;
   gap: 16px;
-}
-
-.footer-icon-item {
-  flex-basis: calc((100% - 48px) / 4);
 }
 
 .footer-icon-circle {
@@ -415,23 +420,18 @@ ul {
 
   .subscribe-button {
     margin: 0 auto;
+    margin-top: 16px;
   }
 
   .subscribe-input {
-    margin-bottom: 16px;
-    width: 370px;
+    width: 320px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1157.98px) {
   .footer-container-main {
-    margin-left: 108px;
     margin-right: 24px;
     margin-bottom: 72px;
-  }
-
-  .footer-container-contact {
-    margin-left: 108px;
   }
 
   .footer-container {
@@ -445,6 +445,10 @@ ul {
 
   .subscribe-form {
     display: flex;
+  }
+
+  .footer-back .container {
+    max-width: 584px;
   }
 }
 
@@ -480,7 +484,7 @@ ul {
   background-size: cover;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 188px 0;
+  padding: 112px 0;
 }
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -563,7 +567,7 @@ ul {
 
 @media screen and (min-width: 768px) {
   .button-index {
-    margin-top: 48px;
+    margin-top: 36px;
   }
 
   .title-hero {
@@ -576,7 +580,11 @@ ul {
 
 @media screen and (min-width: 1158px) {
   .button-index {
-    margin-top: 36px;
+    margin-top: 48px;
+  }
+
+  .hero {
+    padding: 188px 0;
   }
 }
 
@@ -778,8 +786,6 @@ ul {
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
   flex-basis: calc((100% - 72px) / 4);
-  max-width: 264px;
-  margin: 0 auto;
 }
 
 .team-icons-list {
@@ -820,8 +826,6 @@ ul {
     column-gap: 24px;
     row-gap: 64px;
     padding: 0;
-    margin-left: 92px;
-    margin-right: 92px;
   }
 
   .team-list-item {
@@ -843,6 +847,19 @@ ul {
 
   .team-list-item {
     flex-basis: calc((100% - 72px) / 4);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .section-team .container {
+    max-width: 296px;
+    min-width: 296px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .section-team .container {
+    max-width: 584px;
   }
 }
 
@@ -910,8 +927,6 @@ ul {
 @media screen and (min-width: 768px) {
   .customers-list {
     column-gap: 24px;
-    margin-left: 92px;
-    margin-right: 92px;
   }
 
   .customers-list-icon {
@@ -932,6 +947,12 @@ ul {
 
   .customers-list-icon {
     flex-basis: calc((100% - 5 * 24px) / 6);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .customers-section .container {
+    max-width: 584px;
   }
 }
 
@@ -1093,6 +1114,12 @@ ul {
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 320px) and (max-width: 428px) {
+  .modal {
+    width: 95%;
+  }
 }
 
 .modal-button {
@@ -1314,6 +1341,7 @@ input[type='checkbox']:checked + .modal-checkbox-label > .modal-checkbox {
   width: 100vw;
   height: 100vh;
   padding: 40px;
+  padding-top: 80px;
   background-color: #ffffff;
   z-index: 999;
 
@@ -1334,12 +1362,11 @@ input[type='checkbox']:checked + .modal-checkbox-label > .modal-checkbox {
 
 .mobile-menu {
   padding: 0;
-  margin-top: 40px;
   list-style: none;
   margin-bottom: auto;
 }
 
-.mobile-nav-menu {
+.mobile-nav-menu:not(:last-child) {
   margin-bottom: 40px;
 }
 
@@ -1387,5 +1414,5 @@ input[type='checkbox']:checked + .modal-checkbox-label > .modal-checkbox {
 
 .mobile-icons-list {
   display: flex;
-  gap: 24px;
+  gap: 56px;
 }
